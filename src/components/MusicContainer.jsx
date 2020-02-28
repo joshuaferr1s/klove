@@ -25,7 +25,7 @@ const MusicContainer = () => {
     try {
       const data = await getPlaying();
       setCurrentPlaying(data);
-      document.title = data.title;
+      document.title = `${data.title} - ${data.artist}`;
     } catch (error) {}
   };
 

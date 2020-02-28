@@ -22,8 +22,11 @@ const MusicContainer = () => {
   };
 
   const updateNowPlaying = async () => {
-    const data = await getPlaying();
-    setCurrentPlaying(data);
+    try {
+      const data = await getPlaying();
+      setCurrentPlaying(data);
+      document.title = data.title;
+    } catch (error) {}
   };
 
   React.useEffect(() => {
